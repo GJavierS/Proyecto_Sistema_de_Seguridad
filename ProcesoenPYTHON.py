@@ -78,27 +78,28 @@ control = Tk()
 control.geometry("500x200")
 control.title('control de sistema')
 
+titleFrame = Frame()
+titleFrame.config(bg = "yellow", width = "500", height = "80")
+titleFrame.place(x=0, y=0)
+#titulo
+lbltitulo = Label(titleFrame, text = "ENCENDIDO Y APAGADO DE SISTEMA", bg = "yellow", font =("ARIAL", 15))
+lbltitulo.place(x=70, y=20)
 
-boton_1 = Label(control,  bg = 'green')
-boton_1.place(x=20,y=50)
-
-boton_2 = Label(control, bg = 'red')
-boton_2.place(x=250,y=50)
-
-boton_3 = Label(control, bg = 'red')
-boton_3.place(x=400,y=150)
+botonesFrame = Frame()
+botonesFrame.config(bg = "orange", width = "500", height = "120")
+botonesFrame.place(x=0, y=80)
 
 #boton de encender
-encender_c = Button(boton_1, text = "ACTIVAR", bg = "white", fg = "black", font = ("ARIAL", 20), command = lambda:encender())
-encender_c.pack()
+encender_c = Button(botonesFrame, text = "ACTIVAR", bg = "green", fg = "white", font = ("ARIAL", 12),command = lambda:encender())
+encender_c.place(x=100, y=40)
 
 #boton de apagar
-apagar_c = Button(boton_2, text = "APAGAR", bg = "white", fg = "black", font = ("ARIAL", 20), command = lambda:apagar())
-apagar_c.pack()
+apagar_c = Button(botonesFrame, text = "APAGAR", bg = "red", fg = "white", font = ("ARIAL", 12),command = lambda:apagar())
+apagar_c.place(x=300, y=40)
 
-#boton de cerrar
-cerrar_c = Button(boton_3, text = "CERRAR", bg = "white", fg = "black", font = ("ARIAL", 10), command = lambda:cerrarInterfaz())
-cerrar_c.pack()
+#boton de Cerrar sistema
+cerrar= Button(botonesFrame, text = ("Salir"),font = ("ARIAL", 14), command = lambda:cerrarInterfaz())
+cerrar.place(x=440, y=80)
 
 
 control.mainloop()
